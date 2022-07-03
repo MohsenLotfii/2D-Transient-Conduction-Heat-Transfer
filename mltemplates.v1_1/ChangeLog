@@ -1,0 +1,50 @@
+This file describes the history of the MATLAB implementations of
+the iterative templates project.
+---
+   
+Version 1.1: Released August 2006.
+   
+   1) Corrected errors:
+
+      a) gmres: Unused 'resid' changed to 'error'.
+
+   2) Initialization of all variables and arrays.
+   
+      a) Arrays initialized en mass, so some deletions below those.
+   
+      Interesting discussion at 
+           http://www.codecomments.com/archive381-2005-10-669759.html.
+   
+   3) Random number generation:
+   
+      a) wathen.m:
+   
+         i)  Changed from rand() to randn().
+         ii) Default is uniform distribtion, so deleted that explicit setting.
+   
+   4) Added workspace (to avoid temporary internal allocation within iteration, 
+        e.g. for storing matrix-vector product). Justification: Larger workstation 
+        memory lets us solve larger problems: conserve space or time? We chose 
+        performance/time to solution.
+   
+   5) Added tester for individual algorithms.
+
+   6) Corrected typos:
+   
+      a) gmres: End of file comment claims "converged"; changed to "No convergence".
+   
+   7) Source comments.
+  
+      a) More descriptive.
+      b) Re-formatted.
+      c) Corrected.
+
+   8) Some other minor formatting and internal naming changes.
+   
+   9) Modified README file to reflect these changes where appropriate.
+
+   -- rbarrett@ornl.gov; August 2006.
+   
+Version 1.0: October 1993: Initial release.
+   
+   --- End ChangeLog.
